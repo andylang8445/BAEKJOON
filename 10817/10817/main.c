@@ -9,7 +9,31 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
+    if(a>b&&a>c){
+        if(b>c){
+            printf("%d",b);
+        }
+        else{
+            printf("%d",c);
+        }
+    }
+    else if(b>c&&b>a){
+        if(a>c){
+            printf("%d",a);
+        }
+        else{
+            printf("%d",c);
+        }
+    }
+    else{
+        if(b>a){
+            printf("%d",b);
+        }
+        else{
+            printf("%d",a);
+        }
+    }
     return 0;
 }
