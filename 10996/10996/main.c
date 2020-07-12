@@ -9,7 +9,18 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    int n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j+=2){
+            printf("* ");
+        }
+        printf("\n");
+        for(int j=1;j<n;j+=2){
+            printf(" *");
+        }
+        if(n>1)
+            printf("\n");
+    }
     return 0;
 }
