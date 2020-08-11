@@ -13,9 +13,18 @@ int main(int argc, const char * argv[]) {
     int cnt=0;
     scanf("%s",input);
     for(int i=0;input[i]!='\0';i++){
-        if(input[i]=='c'||input[i]=='l'||input[i]=='n'||input[i]=='s'||input[i]=='z'||input[i]=='d'){
+        if(input[i]=='c'||input[i]=='s'||input[i]=='z'){
+            cnt++;
+            if(input[i+1]<'a'||input[i+1]>'z')
+                i++;
+        }
+        else if((input[i]=='l'||input[i]=='n')&&input[i+1]=='j'){
             cnt++;
             i++;
+        }
+        else if(input[i]=='d'&&input[i+1]=='z'&&input[i+2]=='='){
+            cnt++;
+            i+=2;
         }
         else if(input[i]>='a'&&input[i]<='y')
             cnt++;
