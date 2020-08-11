@@ -9,7 +9,15 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    int input;
+    int n=1;
+    scanf("%d",&input);
+    while(1){
+        if((1+((n*(n-1))/2)*6)>=input){
+            break;
+        }
+        n++;
+    }
+    printf("%d",n);
     return 0;
 }
