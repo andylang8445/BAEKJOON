@@ -7,9 +7,30 @@
 //
 
 #include <stdio.h>
+int alpha[26];
+void initialize(){
+    for(int i=0;i<26;i++)
+        alpha[i]=0;
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    char input[101],lastvisit;
+    int n,cnt;
+    scanf("%d",&n);
+    cnt=n;
+    for(;n>0;n--){
+        scanf(" %s",input);
+        initialize();
+        lastvisit=input[0];
+        for(int i=0;input[i]!='\0';i++){
+            if(alpha[input[i]-'a']>0&&lastvisit!=input[i]){
+                cnt--;
+                break;
+            }
+            alpha[input[i]-'a']++;
+            lastvisit=input[i];
+        }
+    }
+    printf("%d",cnt);
     return 0;
 }
