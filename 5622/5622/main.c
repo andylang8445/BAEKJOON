@@ -10,6 +10,12 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    printf("Hello, World!\n");
+    char input[16];
+    int cnt=0, timing[]={3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,8,9,9,9,10,10,10,10};
+    scanf(" %s",input);
+    for(int i=0;input[i]!='\0';i++){
+        cnt+=timing[input[i]-'A'];
+    }
+    printf("%d",cnt);
     return 0;
 }
