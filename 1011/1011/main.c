@@ -8,14 +8,26 @@
 
 #include <stdio.h>
 
-int function(int r, int prev){
-    int current;
-    if(prev==-1&&r==1){
-        current=1;
+int sumUntilN(int num){
+    int result;
+    result=(num-1)*num;
+    result/=2;
+    return result;
+}
+
+int findMaximum(int remainingDistance){
+    int result=1,tmp;
+    for(int i=1;i<=remainingDistance;i++){
+        tmp=sumUntilN(i)+sumUntilN(i-1);
+        if(tmp<=remainingDistance){
+            result=i;
+        }
     }
-    if(r<0){
-        
-    }
+    return result;
+}
+
+int findPath(int distance){
+    int cnt;
 }
 
 int main(int argc, const char * argv[]) {
