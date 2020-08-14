@@ -26,8 +26,16 @@ int findMaximum(int remainingDistance){
     return result;
 }
 
-int findPath(int distance){
-    int cnt;
+long findPath(int distance,int max, int cnt){
+    if(distance==0){
+        
+    }
+    else if(distance<0){
+        return 99999999999;
+    }
+    for(int i=1;i<=max;i++){
+        
+    }
 }
 
 int main(int argc, const char * argv[]) {
