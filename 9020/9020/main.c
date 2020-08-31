@@ -26,27 +26,29 @@ void filter2(int end){
 int main(int argc, const char * argv[]) {
     int n,tmp;
     int n1,n2,d;
-    int chk=1;
     filter2(10000);
     scanf("%d",&n);
     for(int i=0;i<n;i++){
         d=99999;
-        chk=1;
         scanf("%d",&tmp);
         for(int j=(tmp/2);j>=2;j--){
             if(arr[j]==0){
                 for(int k=j;k<=tmp;k++){
                     if(arr[k]==0){
                         if((j+k)==tmp){
-                            d=abs((j-k));
-                            n1=j;
-                            n2=k;
+                            if(abs(j-k)<d){
+                                d=abs((j-k));
+                                n1=j;
+                                n2=k;
+                            }
                             break;
                         }
                     }
+                    if(d==0){
+                        break;
+                    }
                 }
             }
-            
         }
         printf("%d %d\n",n1,n2);
     }
