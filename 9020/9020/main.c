@@ -24,11 +24,28 @@ void filter2(int end){
 
 int main(int argc, const char * argv[]) {
     int n,tmp;
+    int chk=0;
     filter2(10000);
     scanf("%d",&n);
     for(int i=0;i<n;i++){
         scanf("%d",&tmp);
-        for()
+        for(int j=2;j<=(tmp/2);j++){
+            if(arr[j]==0){
+                for(int k=j;k<=tmp;k++){
+                    if(arr[k]==0){
+                        if((j+k)==tmp){
+                            printf("%d %d\n",j,k);
+                            chk=1;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(chk==1){
+                break;
+            }
+        }
+        chk=0;
     }
     return 0;
 }
