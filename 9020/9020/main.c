@@ -46,9 +46,7 @@ int main(int argc, const char * argv[]) {
                     }
                 }
             }
-            if(chk==0){
-                break;
-            }
+            
         }
         printf("%d %d\n",n1,n2);
     }
