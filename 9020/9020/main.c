@@ -8,8 +8,27 @@
 
 #include <stdio.h>
 
+int arr[10008];
+
+void filter2(int end){
+    for(int i=2;i<end;i++){
+        if(arr[i]==0){
+            for(int j=2;j<=(end/i);j++){
+                if(j<10008){
+                    arr[i*j]++;
+                }
+            }
+        }
+    }
+}
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    int n,tmp;
+    filter2(10000);
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&tmp);
+        for()
+    }
     return 0;
 }
