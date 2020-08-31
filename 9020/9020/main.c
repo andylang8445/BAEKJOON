@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int arr[10008];
 
@@ -24,28 +25,29 @@ void filter2(int end){
 
 int main(int argc, const char * argv[]) {
     int n,tmp;
-    int chk=0;
+    int n1,n2,d;
     filter2(10000);
     scanf("%d",&n);
     for(int i=0;i<n;i++){
+        d=99999;
         scanf("%d",&tmp);
         for(int j=2;j<=(tmp/2);j++){
             if(arr[j]==0){
                 for(int k=j;k<=tmp;k++){
                     if(arr[k]==0){
                         if((j+k)==tmp){
-                            printf("%d %d\n",j,k);
-                            chk=1;
+                            if(abs(j-k)<d){
+                                d=abs((j-k));
+                                n1=j;
+                                n2=k;
+                            }
                             break;
                         }
                     }
                 }
             }
-            if(chk==1){
-                break;
-            }
         }
-        chk=0;
+        printf("%d %d\n",n1,n2);
     }
     return 0;
 }
