@@ -29,25 +29,12 @@ int main(int argc, const char * argv[]) {
     filter2(10000);
     scanf("%d",&n);
     for(int i=0;i<n;i++){
-        d=99999;
         scanf("%d",&tmp);
-        for(int j=(tmp/2);j>=2;j--){
-            if(arr[j]==0){
-                for(int k=j;k<=tmp;k++){
-                    if(arr[k]==0){
-                        if((j+k)==tmp){
-                            if(abs(j-k)<d){
-                                d=abs((j-k));
-                                n1=j;
-                                n2=k;
-                            }
-                            break;
-                        }
-                    }
-                    if(d==0){
-                        break;
-                    }
-                }
+        for(int j=(tmp/2);j<=(tmp);j++){
+            if(arr[(tmp-j)]==0&&arr[j]==0){
+                n1=tmp-j;
+                n2=j;
+                break;
             }
         }
         printf("%d %d\n",n1,n2);
