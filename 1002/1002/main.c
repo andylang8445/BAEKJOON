@@ -10,6 +10,7 @@
 
 int main(int argc, const char * argv[]) {
     int x1,x2,y1,y2,r1,r2;
+    int cnt;
     int n;
     scanf("%d",&n);
     for(int i=0;i<n;i++){
