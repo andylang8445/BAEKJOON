@@ -9,7 +9,13 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    int a,b,c;
+    while(1){
+        scanf("%d %d %d",&a,&b,&c);
+        if(a==b&&b==c&&c==0){
+            break;
+        }
+        if(
+    }
     return 0;
 }
