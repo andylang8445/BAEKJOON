@@ -38,7 +38,7 @@ void initialize(){
             }
         }
     }
-    /*printf("\n\n");
+    printf("\n\n");
     for(int i=0;i<8;i++){
         printf("\t");
         for(int j=0;j<8;j++){
@@ -54,7 +54,7 @@ void initialize(){
             printf("%d",sample2[i][j]);
         }
         printf("\n");
-    }*/
+    }
     minimum=N*M;
 }
 
@@ -73,14 +73,14 @@ int mapCmp(int x,int y){
     }
     
     
-    /*for(int i=0;i<8;i++){
+    for(int i=0;i<8;i++){
         printf("\t\t");
         for(int j=0;j<8;j++){
             printf("%d",map[x+i][y+j]);
         }
         printf("\n");
     }
-    printf("\n");*/
+    printf("\n");
     
     if(cnt1>cnt2){
         return cnt2;
@@ -104,28 +104,6 @@ int main(int argc, const char * argv[]) {
         }
     }
     initialize();
-    
-    if(N==M&&N==8){
-        minimum=mapCmp(0, 0);
-    }
-    else if(N==8){
-        for(int j=0;j<=(M-8);j++){
-            int tmp=mapCmp(0, j);
-            if(minimum>tmp){
-                minimum=tmp;
-            }
-        }
-    }
-    else if(M==8){
-        for(int j=0;j<=(M-8);j++){
-            int tmp=mapCmp(j, 0);
-            if(minimum>tmp){
-                minimum=tmp;
-            }
-        }
-    }
-    
-    else{
         for(int i=0;i<=(N-8);i++){
             for(int j=0;j<=(M-8);j++){
                 int tmp=mapCmp(i, j);
@@ -134,8 +112,7 @@ int main(int argc, const char * argv[]) {
                 }
             }
         }
-    }
     
-    printf("%d",minimum);
+    printf("%d\n",minimum);
     return 0;
 }
