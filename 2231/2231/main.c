@@ -7,8 +7,18 @@
 
 #include <stdio.h>
 
+int digitSum(int n,int sum){
+    if(n<10){
+        sum+=n;
+        return sum;
+    }
+    return digitSum((n/10), (sum+(n%10)));
+}
+
+int N;
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    scanf("%d",&N);
+    printf("%d",digitSum(2340, 0));
     return 0;
 }
