@@ -19,6 +19,13 @@ int N;
 
 int main(int argc, const char * argv[]) {
     scanf("%d",&N);
-    printf("%d",digitSum(2340, 0));
+    for(int i=1;i<N;i++){
+        int tmp=digitSum(i, 0)+i;
+        if(tmp==N){
+            printf("%d",i);
+            return 0;
+        }
+    }
+    printf("0");
     return 0;
 }
