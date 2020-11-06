@@ -19,6 +19,6 @@ int main(int argc, const char * argv[]) {
         arr[tmp-1]++;
         sum+=tmp;
     }
-    printf("%.0f\n",(double)(sum/N));
+    printf("%d\n",(sum/N));
     return 0;
 }
