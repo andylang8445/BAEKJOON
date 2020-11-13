@@ -8,62 +8,62 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    int N, arr[8000], sum=0, cnt=0, max=0, tmp, min=4000;
-    for(int i=0;i<8000;i++){
+    int N, arr[8001], tmp, min = 4000, max = -4000,  maxpopulation = 0, populationCnt = 0, populationSave = 0, sum = 0;
+    for(int i=0;i<8001;i++){
         arr[i]=0;
     }
     scanf("%d",&N);
     for(int i=0;i<N;i++){
         scanf("%d",&tmp);
-        arr[tmp+4000-1]++;
-        if(max<arr[tmp+4000-1]){
-            max=arr[tmp+4000-1];
-            cnt=1;
+        if(tmp > max){
+            max = tmp;
         }
-        else if(max==arr[tmp+4000-1]){
-            cnt++;
+        if(tmp < min){
+            min = tmp;
         }
-        if(min>arr[tmp+4000-1]){
-            min=arr[tmp+4000-1];
+        arr[tmp+4000]++;
+        
+        if(maxpopulation < arr[tmp+4000]){
+            maxpopulation = arr[tmp+4000];
+            populationCnt = 1;
+            populationSave = tmp;
+        }
+        else if(maxpopulation == arr[tmp+4000]){
+            populationCnt++;
         }
         sum+=tmp;
     }
+    //산술평균
+    printf("%.0f\n",(double)sum/N);
     
-    for(int i=0;i<8000;i++){
-        if(arr[i]>0){
-            printf("%d: %d\n",(i-4000+1),arr[i]);
-        }
-    }
-    printf("max: %d\nmin:%d\n",max,min);
-    
-    
-    printf("%d\n",(sum/N));
-    
-    tmp=0;
-    for(int i=0;i<8000;i++){
+    //중앙값
+    tmp = 0;
+    for(int i=0;i<8001;i++){
         tmp+=arr[i];
-        if((N/2)<=tmp){
-            printf("%d\n",(i-4000+2));
+        if(tmp>(N/2)){
+            printf("%d\n",i-4000);
             break;
         }
     }
     
-    tmp=0;
-    for(int i=0;i<8000;i++){
-        if(cnt==1){
-            if(max==arr[i]){
-                printf("%d\n",(i-4000+1));
-                break;
-            }
-        }
-        else if(cnt>1&&max==arr[i]){
-            tmp++;
-            if(tmp==2){
-                printf("%d\n",(i-4000+1));
+    //최빈값 출력
+    if(populationCnt == 1){
+        printf("%d\n",populationSave);
+    }
+    else{
+        tmp = 0;
+        for(int i=0;i<8001;i++){
+            if(arr[i] == maxpopulation){
+                tmp++;
+                if(tmp == 2){
+                    printf("%d\n",i-4000);
+                    break;
+                }
             }
         }
     }
     
-    printf("%d",(max-min));
+    //범위 출력
+    printf("%d\n",(max-min));
     return 0;
 }
