@@ -47,6 +47,22 @@ int main(int argc, const char * argv[]) {
         }
     }
     // 중복 체크 완료
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
+            if(len[j]<len[i]){
+                swap(i, j);
+            }
+            else if(len[i]==len[j]){
+                if(strcmp(arr[i], arr[j])>0){
+                    swap(i, j);
+                }
+            }
+        }
+    }
     
+    
+    for(int i=0;i<n;i++){
+        printf("%s\n",arr[i]);
+    }
     return 0;
 }
