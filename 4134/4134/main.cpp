@@ -10,7 +10,7 @@
 using namespace std;
 
 bool is_sosu(long long int a){
-    for(long long int i=2;i<=sqrt(a);i++){
+    for(long long int i=2;i<=(sqrt(a));i++){
         if(a%i == 0){
             return false;
         }
@@ -19,10 +19,10 @@ bool is_sosu(long long int a){
 }
 
 int main(int argc, const char * argv[]) {
-    int n;
+    long long int n;
     cin>>n;
     for(int i=0;i<n;i++){
-        int in;
+        long long int in;
         cin>>in;
         for(long long int j=in;;j++){
             if(j>1 && is_sosu(j)){
